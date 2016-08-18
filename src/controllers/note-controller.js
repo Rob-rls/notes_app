@@ -2,14 +2,15 @@
 
   function NoteController(noteList) {
     this.noteListView = new ListView(noteList);
+
   };
 
   NoteController.prototype.showFullNoteById = function() {
     var noteId = location.hash.split("#")[1];
-    var appDiv = this._getAppDiv();
-    var noteArray = this.noteListView.noteList.listArr;
+    var appDiv = noteController._getAppDiv();
+    var noteArray = noteController.noteListView.noteList.listArr;
     var note = noteArray.find(function(elem) {
-      if (elem.noteID === noteId) {
+      if (elem.noteID == noteId) {  // use == to comeare string number to number
         return elem;
       };
     });

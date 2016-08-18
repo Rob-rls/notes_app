@@ -19,7 +19,8 @@ it('NoteController can return content for a single note', function() {
   var noteController = new NoteController(noteList);
   noteController.insertHTML();
   var noteElement = document.getElementById('0');
-  noteElement.click();
-  var appDivContent = document.getElementById('app').innerHTMl;
-  isTrue(appDivContent === '<div>Favourite drink: seltzer</div>')
+  noteController.showFullNoteById();
+  var appDivContent = document.getElementById('app');
+  console.log("test appDivContent: " + appDivContent.innerHTML);
+  isTrue(appDivContent.innerHTML === '<div>Favourite drink: seltzer</div>')
 });
