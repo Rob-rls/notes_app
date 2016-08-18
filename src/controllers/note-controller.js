@@ -26,6 +26,11 @@
     this._getAppDiv().innerHTML = this.noteListView.printListHTML();
   };
 
+  NoteController.prototype.addNote = function(text) {
+    noteController.noteListView.noteList.store(text);
+    noteController.insertHTML();
+  }
+
   exports.NoteController = NoteController;
 
 })(this);
