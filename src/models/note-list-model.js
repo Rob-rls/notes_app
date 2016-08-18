@@ -1,10 +1,13 @@
 (function(exports) {
   function NoteList() {
       this.listArr = [];
+      this.noteIDCounter = 0;
     }
 
     NoteList.prototype.store = function (note) {
-      this.listArr.push(new Note(note));
+      var noteID = this.noteIDCounter;
+      this.listArr.push(new Note(note, noteID));
+      this.noteIDCounter ++;
     }
 
     NoteList.prototype.list = function () {
