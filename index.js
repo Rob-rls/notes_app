@@ -1,6 +1,6 @@
 var noteList = new NoteList();
-noteList.store("Favourite drink: seltzer");
-noteList.store("Favourite drink: cherryade");
+noteList.createNote("Favourite drink: seltzer");
+noteList.createNote("Favourite drink: cherryade");
 var noteController = new NoteController(noteList);
 noteController.insertHTML();
 

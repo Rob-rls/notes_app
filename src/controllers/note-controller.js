@@ -23,7 +23,7 @@
   };
 
   NoteController.prototype.insertHTML = function(){
-    this._getAppDiv().innerHTML = this.noteListView.printListHTML();
+    this._getAppDiv().innerHTML = this.noteListView.displayList();
   };
 
   NoteController.prototype.addNote = function(text) {

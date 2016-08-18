@@ -1,6 +1,6 @@
 it('NoteController can modify HTML on document', function(){
   var noteList = new NoteList();
-  noteList.store("Favourite drink: seltzer");
+  noteList.createNote("Favourite drink: seltzer");
   var newView = new ListView(noteList);
   var noteController = new NoteController(noteList);
   var element = document.createElement('div', {id: 'app'});
@@ -8,13 +8,13 @@ it('NoteController can modify HTML on document', function(){
     return element;
   };
   noteController.insertHTML();
-  isTrue(noteController._getAppDiv().innerHTML === newView.printListHTML());
+  isTrue(noteController._getAppDiv().innerHTML === newView.displayList());
 
 });
 
 it('NoteController can return content for a single note', function() {
   var noteList = new NoteList();
-  noteList.store("Favourite drink: seltzer");
+  noteList.createNote("Favourite drink: seltzer");
   var newView = new ListView(noteList);
   var noteController = new NoteController(noteList);
   noteController.insertHTML();

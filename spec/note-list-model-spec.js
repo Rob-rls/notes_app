@@ -4,12 +4,12 @@ it('NoteList stores notes', function() {
   var noteOne = "I love ruby";
   var noteTwo = "I hate Javascript";
 
-  notelist.store(noteOne);
-  notelist.store(noteTwo);
+  notelist.createNote(noteOne);
+  notelist.createNote(noteTwo);
 
   var testList = notelist.list()
-  var validateFirstNote = (testList[0].showNote() === noteOne)
-  var validateSecondNote = (testList[1].showNote() === noteTwo)
+  var validateFirstNote = (testList[0].getNoteText() === noteOne)
+  var validateSecondNote = (testList[1].getNoteText() === noteTwo)
   isTrue(validateFirstNote === validateSecondNote);
 });
 
@@ -18,8 +18,8 @@ it('NoteList give each new Note a uniquie ID', function() {
   var noteOne = "I love ruby";
   var noteTwo = "I hate Javascript";
 
-  notelist.store(noteOne);
-  notelist.store(noteTwo);
+  notelist.createNote(noteOne);
+  notelist.createNote(noteTwo);
 
   var noteListArray = notelist.list();
 

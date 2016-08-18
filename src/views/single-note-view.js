@@ -5,7 +5,7 @@
   };
 
   NoteView.prototype.printNoteHTML = function () {
-    return "<div>" + this._note.showNote() + "</div>";
+    return "<div>" + this._note.getNoteText() + "</div>";
   };
 
   exports.NoteView = NoteView;

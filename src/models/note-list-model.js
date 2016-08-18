@@ -4,7 +4,7 @@
       this.noteIDCounter = 0;
     }
 
-    NoteList.prototype.store = function (note) {
+    NoteList.prototype.createNote = function (note) {
       var noteID = this.noteIDCounter;
       this.listArr.push(new Note(note, noteID));
       this.noteIDCounter ++;
