@@ -7,7 +7,7 @@
     html = "<ul>";
     this.noteList.list().forEach(function(note){
       var shortNote = note.showNote().substring(0, 20);
-      html += "<li><div>" + shortNote + "</div></li>";
+      html += '<li><a href="#' + note.noteID + '" id="' + note.noteID + '"><div>' + shortNote + '</div></a></li>';
     });
     html += "</ul>";
     return html;

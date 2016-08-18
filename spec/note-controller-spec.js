@@ -11,3 +11,15 @@ it('NoteController can modify HTML on document', function(){
   isTrue(noteController._getAppDiv().innerHTML === newView.printListHTML());
 
 });
+
+it('NoteController can return content for a single note', function() {
+  var noteList = new NoteList();
+  noteList.store("Favourite drink: seltzer");
+  var newView = new ListView(noteList);
+  var noteController = new NoteController(noteList);
+  noteController.insertHTML();
+  var noteElement = document.getElementById('0');
+  noteElement.click();
+  var appDivContent = document.getElementById('app').innerHTMl;
+  isTrue(appDivContent === '<div>Favourite drink: seltzer</div>')
+});
